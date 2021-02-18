@@ -1,11 +1,14 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Card {
     private String faceName;
     private String suit;
+    private Image cardImage;
 
     /**
      * This constructor takes 2 arguments, one for the face name and
@@ -20,6 +23,18 @@ public class Card {
     {
         setFaceName(faceName);
         setSuit(suit);
+        setCardImage();
+    }
+
+    private void setCardImage()
+    {
+        String filePath = String.format("images/%s_of_%s.png",faceName,suit);
+//        System.out.println(filePath);
+        cardImage = new Image(filePath);
+    }
+
+    public Image getCardImage() {
+        return cardImage;
     }
 
     public String getFaceName() {
@@ -31,8 +46,8 @@ public class Card {
      * @return
      */
     public static List<String> getFaceNames(){
-        return Arrays.asList("two","three","four","five","six","seven","eight",
-                "nine","ten","jack","queen","king","ace");
+        return Arrays.asList("2","3","4","5","6","7","8",
+                "9","10","jack","queen","king","ace");
     }
 
     /**
