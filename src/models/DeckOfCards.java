@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeckOfCards {
@@ -38,5 +39,13 @@ public class DeckOfCards {
             return deck.remove(0);
         else
             return null;
+    }
+
+    /**
+     * This method will randomize the order of the Card objects in the deck
+     */
+    public void shuffle()
+    {
+        Collections.shuffle(deck);
     }
 }

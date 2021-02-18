@@ -19,11 +19,15 @@ public class CardViewController implements Initializable {
     @FXML
     private Label faceValueLabel;
 
+    @FXML
+    private Label colourLabel;
+
     private DeckOfCards deckOfCards;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         deckOfCards = new DeckOfCards();
+        deckOfCards.shuffle();
         getNextCard();
     }
 
@@ -36,6 +40,7 @@ public class CardViewController implements Initializable {
             faceNameLabel.setText(card.getFaceName());
             suitLabel.setText(card.getSuit());
             faceValueLabel.setText(Integer.toString(card.getFaceValue()));
+            colourLabel.setText(card.getCardColour());
         }
     }
 }

@@ -82,7 +82,7 @@ public class Card {
      */
     public String getCardColour()
     {
-        if (suit.equalsIgnoreCase("hearts")||suit.equals("diamonds"))
+        if (suit.equals("hearts")||suit.equals("diamonds"))
             return "red";
         else
             return "black";
