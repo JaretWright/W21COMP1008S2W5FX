@@ -51,7 +51,7 @@
                   </Label>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" text="Get Next Card">
+            <Button mnemonicParsing="false" onAction="#getNextCard" text="Get Next Card">
                <font>
                   <Font size="24.0" />
                </font>
