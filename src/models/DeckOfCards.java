@@ -26,4 +26,17 @@ public class DeckOfCards {
             }
         }
     }
+
+    /**
+     * This method will return the "top" card from the deck.
+     *
+     * If there are no cards left in the deck, it will return null
+     */
+    public Card dealTopCard()
+    {
+        if (deck.size()>0)
+            return deck.remove(0);
+        else
+            return null;
+    }
 }

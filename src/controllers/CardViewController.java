@@ -3,6 +3,7 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import models.Card;
 import models.DeckOfCards;
 
 import java.net.URL;
@@ -22,9 +23,9 @@ public class CardViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DeckOfCards deckOfCards = new DeckOfCards();
-
-        faceNameLabel.setText("Jaret's Magic Card");
-        suitLabel.setText("Armani");
-        faceValueLabel.setText("$1 million");
+        Card card = deckOfCards.dealTopCard();
+        faceNameLabel.setText(card.getFaceName());
+        suitLabel.setText(card.getSuit());
+        faceValueLabel.setText(Integer.toString(card.getFaceValue()));
     }
 }
